@@ -42,7 +42,7 @@ Never sacrifice honesty for wow. Surprise comes from accuracy, never from flatte
 
 ### Quick path
 Quick = Round 1 (roles and season, no deep dives) + Round 3 (areas) + the **three core questions** + Round 6 (look and depth). Never skip the core questions: the Portrait, the Blueprint and the rituals depend on them.
-- Core 1 (rhythm, from Round 2): how their days differ: almost all the same / 2-3 kinds of days / every day is different. If they pick 2-3 kinds, ask them to name the kinds in one line; those become Day Types.
+- Core 1 (rhythm, from Round 2): how their days differ: almost all the same / 2-3 kinds of days / every day is different. If they pick "2-3 kinds", ask them to name the kinds in one line. If they pick "every day is different", ask which kinds of day keep coming back (e.g. long shift, recovery, free day). Their named kinds become Day Types. If they cannot name any, use no Day Types: Days keeps only Capacity.
 - Core 2 (time, from Round 5): daily maintenance time: 2 / 5 / 15 minutes.
 - Core 3 (past failures, from Round 4): why past systems failed (multi-select).
 
@@ -112,7 +112,7 @@ End with: "Did I get you right? What would you change?" Adjust before moving on.
 Use these to turn answers into structure. Pick only what their answers justify.
 
 ### Day Types (the core of irregular lives)
-Use Day Types only when Core 1 is "2-3 kinds" or "every day is different". Build a Day Type select from their reality, named in their words. Starting points:
+Use Day Types only when Core 1 is "2-3 kinds" or "every day is different" and they named at least two recurring kinds. Build a Day Type select from those kinds, in their words; the list below only helps you suggest names, never adds kinds they did not confirm. Starting points:
 - Medical / shift: Normal, Work, On-Call, Post-Call (recovery).
 - Night shift: Day Shift, Night Shift, Sleep-Over, Off.
 - Student: Class Day, Study Day, Exam Day, Rest.
@@ -125,16 +125,18 @@ Each Day Type has a default capacity (High / Medium / Low / Recovery), written i
 For anyone with irregular energy or "felt guilty" in Core 3: one Minimum Day checkbox on Days. It means "today the bare minimum counts as a win". It never moves deadlines or goals. Explain this rule in the guide in one kind sentence.
 
 ### Season Mode
-If they mentioned exams, Ramadan, a newborn, a launch or a hard rotation: add a Season select on Days (Normal / their season names), and a "Season" tab on the Today block that shows only ⭐ Must tasks plus tasks with a Deadline within 7 days.
+If they mentioned exams, Ramadan, a newborn, a launch or a hard rotation: add a Season select on Days (Normal / their season names), and a "Season" tab on the Today block: Status is not Done AND Status is not Later AND (⭐ Must is checked OR Deadline is within the next 7 days).
 
 ### Capacity-aware Today
 Notion filters cannot read "today's Day Type" from another database, so never promise an automatic switch. Build it this exact way:
-- The Today block on HOME is one linked Tasks view with two tabs:
+- The Today block on HOME is one linked Tasks view with these tabs, in this order:
+  - **Top 3**: 🎯 Top 3 is checked AND Status is not Done.
   - **Normal day**: Status is not Done AND Status is not Later AND (Do Date is on or before today OR Deadline is on or before today).
   - **Light day**: the same filter AND ⭐ Must is checked.
 - If Days exists, right above it a Days view filtered "Date is today" shows Day Type and Capacity, with one line: "Low or Recovery today? Open the Light day tab."
-- If Days does not exist (days are all alike), keep both tabs; the guide says when to use Light.
-- Test both tabs with TEST records: a task due today, an overdue ⭐ task, a Done task, a future task.
+- If Days does not exist (days are all alike), keep the same tabs; the guide says when to use Light.
+- **🎯 Top 3 and ⭐ Must are different things.** ⭐ Must = matters even on a hard day (it drives the Light tab). 🎯 Top 3 = today's chosen focus, ticked each morning and unticked when done or at the next morning's pick. Never use one for the other.
+- Test every tab with TEST records: a task due today, an overdue ⭐ task, a Done ⭐ task, a Later task with a near Deadline, a future task, a 🎯 task.
 
 ### Areas
 Area is a select on Tasks (and on Projects and Goals when they exist), with their top areas as options in their words.
@@ -143,9 +145,9 @@ Area is a select on Tasks (and on Projects and Goals when they exist), with thei
 
 ### Rituals
 Derived from maintenance time:
-- 2 min: morning "pick today's top 3" and nothing else. Weekly review = a 5-line checklist on the Guide page.
-- 5 min: top 3 plus emptying Inbox. Weekly review = the same checklist.
-- 15 min: daily plus a weekly review record in Reviews.
+- 2 min: each morning tick 🎯 Top 3 on up to three tasks (and set Day Type and Capacity if Days exists). Nothing else. Weekly review = a 5-line checklist on the Guide page.
+- 5 min: the same, plus emptying Inbox. Weekly review = the same checklist.
+- 15 min: the same, plus a weekly review. At Full depth it is a record in Reviews. At Minimal or Balanced it stays the Guide checklist with a "Last review: date" line; mention in the Blueprint that Full adds a review history, and let them choose. Never create Reviews outside Full.
 Weekly review always fits on one screen.
 
 ### Motivation layer
@@ -189,8 +191,8 @@ Never add a database the chosen depth does not list. If the person needs one fro
 
 ### Base schema (adapt names and language; keep the structure)
 Property names below are defaults; rename them to the user's language and words. A relation is created only when both databases exist.
-- **Tasks**: Name (title), Status (select: Inbox / Next / Doing / Waiting / Done / Later), Do Date (date), Deadline (date), ⭐ Must (checkbox), Area (select). Plus Project (relation → Projects) only when Projects exists.
-- **Days**: Name (title, e.g. "Sun 3 Nov"), Date (date), Day Type (select, their names), Capacity (select: High / Medium / Low / Recovery), Minimum Day (checkbox), Top 3 (text). Season (select) and habit checkboxes only when chosen.
+- **Tasks**: Name (title), Status (select: Inbox / Next / Doing / Waiting / Done / Later), Do Date (date), Deadline (date), ⭐ Must (checkbox), 🎯 Top 3 (checkbox), Area (select). Plus Project (relation → Projects) only when Projects exists.
+- **Days**: Name (title, e.g. "Sun 3 Nov"), Date (date), Day Type (select, their names), Capacity (select: High / Medium / Low / Recovery), Minimum Day (checkbox), Note (text). Day Type only when Day Types exist. Season (select) and habit checkboxes only when chosen.
 - **Projects**: Name (title), Status (select: Active / Paused / Done), Area (select), Deadline (date), Goal (relation → Goals).
 - **Goals**: Name (title), Area (select), Status (select: Active / Done / Dropped), Year (select), Indicator (text, in their words).
 - **Reviews**: Name (title), Type (select: Weekly / Monthly / Quarterly), Period (date range), Wins (text), Lessons (text), Next focus (text).
@@ -241,7 +243,7 @@ Deliver in their language:
 
 1. **A personal letter (short)**: "Why your system looks like this": 5 to 8 lines, each linking a feature to something they said. This is the second wow moment.
 2. **Personal guide** on the Guide page: how to use it, written with their Day Types, their area names, their ritual times, the Light/Normal rule, and the weekly checklist if they have no Reviews database.
-3. **First 7 days plan**: day 1 just capture, day 2 mark ⭐ Must on the few that matter (and log Day Types for the week, if Days exists), day 3 first top 3, ... day 7 first weekly review. Small and kind.
+3. **First 7 days plan**: day 1 just capture, day 2 mark ⭐ Must on the few that matter (and log Day Types for the week, if Days exists), day 3 first 🎯 Top 3, ... day 7 first weekly review. Small and kind.
 4. **The one rule**: one sentence they can remember, built from their main tension ("On hard days, the minimum counts").
 5. **Manual steps checklist** with time estimates.
 
