@@ -27,13 +27,14 @@ Not a template. A short, adaptive interview, a portrait of how your life actuall
 - **Your language and dialect**, including Arabic dialects, English, and more.
 - **No invented data.** It never fills your system with fake goals, tasks or numbers.
 - **Checkup mode**: come back after a month and it proposes cuts before additions.
-- **No Notion connected?** You get an exact manual build guide plus CSV files to import.
+- **No Notion connected?** You get an exact manual build guide plus empty CSV files (headers only) to import.
+- **Safe to re-run**: a build log lets it resume after an interruption without creating duplicates.
 
 ### Install
 
 **Claude (claude.ai or the desktop app)**
 1. Download this repo as ZIP (green **Code** button → **Download ZIP**), unzip it, then zip only the `skills/life-os-architect` folder.
-2. Go to **Settings → Capabilities → Skills** and upload that ZIP.
+2. Go to **Customize → Skills** and upload that ZIP. (On some versions it is under **Settings → Capabilities → Skills**.)
 3. Connect the **Notion** connector in Settings so the skill can build for you.
 
 **Claude Code**
@@ -52,7 +53,7 @@ or in Arabic:
 
 > ابنيلي Life OS يناسب حياتي.
 
-The deep interview takes about 10 minutes. A quick 3-minute version is offered at the start.
+The deep interview takes about 10 minutes. A quick version (about 4 minutes) is offered at the start; it still asks the two questions that matter most: how much time you can give daily, and why past systems failed you.
 
 ### Origin
 
@@ -81,11 +82,12 @@ Built by **Dr. Haider Asaad**, a physician and content creator, from the process
 - **تحجي بلغتك ولهجتك.**
 - **ما تخترع بيانات** أبداً.
 - **وضع المراجعة**: ترجعلها بعد شهر وتخفف النظام قبل ما تضيف.
-- **ما عندك Notion متصل؟** تطلعلك دليل بناء يدوي دقيق مع ملفات CSV.
+- **ما عندك Notion متصل؟** تطلعلك دليل بناء يدوي دقيق مع ملفات CSV فارغة (بس العناوين) تستوردها.
+- **آمنة إذا انعادت**: تكمل من وين وقفت بدون ما تكرر شي.
 
 ### التنصيب
 
-نفس خطوات القسم الإنكليزي فوق: ارفع مجلد `skills/life-os-architect` كملف ZIP من **Settings → Capabilities → Skills**، واربط Notion.
+نفس خطوات القسم الإنكليزي فوق: ارفع مجلد `skills/life-os-architect` كملف ZIP من **Customize → Skills** (وبعض النسخ من **Settings → Capabilities → Skills**)، واربط Notion.
 
 ### الاستخدام
 
@@ -96,5 +98,10 @@ Built by **Dr. Haider Asaad**, a physician and content creator, from the process
 </div>
 
 ---
+
+### Changelog
+
+- **v1.1**: Quick interview now always asks about daily time and past failures; exact build recipe for the Light/Normal *Today* view; base schema; build log for safe re-runs; CSV files always provided without Notion; tool limits stated per connector; shorter description; updated install path.
+- **v1.0**: First release.
 
 MIT License · © 2026 Dr. Haider Asaad

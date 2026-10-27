@@ -1,6 +1,6 @@
 ---
 name: life-os-architect
-description: Interviews a person with adaptive multiple-choice questions, reads their life back to them, then designs and builds a deeply personal Life OS in Notion (or a manual build guide). Use when someone wants a personal life/productivity system, a Notion life planner, or "a system that fits me".
+description: Interviews you with adaptive multiple-choice questions, reads your life back to you, then builds a deeply personal Life OS in Notion. Use for a life planner or a system that fits you.
 ---
 
 # Life OS Architect
@@ -37,7 +37,11 @@ Never sacrifice honesty for wow. Surprise comes from accuracy, never from flatte
 - **Allow multi-select** where life is genuinely mixed (areas, roles, pains).
 - **Branch hard.** Skip any question whose answer you can already infer. Say what you inferred so they can correct it: "You mentioned night shifts, so I'll assume your sleep moves around; tell me if not."
 - **Quote them back.** When an answer contains a vivid phrase, keep it. Their words become page names, day types and guide text later.
-- **Offer a fast lane.** At the start: "Deep interview (about 10 minutes, best result) or Quick (3 minutes)?" Quick runs Rounds 1, 3 and 6 only.
+- **Offer a fast lane.** At the start: "Deep interview (about 10 minutes, best result) or Quick (about 4 minutes)?"
+- **Quick path** = Round 1 (roles and season, no deep dives) + Round 3 (areas) + the **two core questions** below + Round 6 (look and depth). Never skip the core questions: the Portrait, the Blueprint and the rituals depend on them.
+  - Core 1: daily maintenance time (2 / 5 / 15 minutes), from Round 5.
+  - Core 2: why past systems failed (multi-select), from Round 4.
+- In the Quick path, anything not asked gets a safe default, stated openly in the Blueprint ("I assumed you plan each morning; change it if not"). Never present a default as something they said.
 
 ---
 
@@ -119,7 +123,13 @@ For anyone with irregular energy or "felt guilty" in Round 4: one Minimum Day ch
 If they mentioned exams, Ramadan, a newborn, a launch or a hard rotation: add a Season select on the week or day (Normal / their season names). Seasonal views show lighter task lists.
 
 ### Capacity-aware Today
-Today's view respects the Day Type: on Low or Recovery days, only show Must-do and ⭐ tasks. This is the feature people remember.
+Notion filters cannot read "today's Day Type" from another database, so never promise an automatic switch. Build it this exact way, which works the same every time:
+- Tasks gets a checkbox **⭐ Must** (the few things that matter even on a hard day).
+- The Today block on HOME is one linked Tasks view with two tabs:
+  - **Normal day**: Status is not Done AND (Do Date is today or before, OR Deadline is today or before).
+  - **Light day**: the same filter AND ⭐ Must is checked.
+- Right above it, the Today's-day view shows Day Type and Capacity, with one line: "Low or Recovery today? Open the Light day tab."
+- The guide explains this in one sentence. This is the feature people remember, so test both tabs with TEST records.
 
 ### Areas
 One page per top area (Full depth) or one Areas view (Minimal/Balanced). Each area page shows only: current goals, current projects, next tasks, and one area-specific block that comes from their deep dive (e.g. review queue for a doctor's medical topics, client list for a freelancer, cadence board for a creator).
@@ -159,6 +169,21 @@ Ask: "Build it like this, or change something?" Do not build until they approve.
 
 Check whether a Notion connector or tools are available. If not, go to section 7.
 
+### Base schema (adapt names and language; keep the structure)
+Build only the databases the chosen depth includes. Property names below are defaults; rename them to the user's language and words.
+- **Tasks** (all depths): Name (title), Status (Inbox / Next / Doing / Waiting / Done / Later), Do Date (date), Deadline (date), ⭐ Must (checkbox), Area (select), Project (relation → Projects).
+- **Days** (all depths when Day Types exist): Date (title or date), Day Type (select, their names), Capacity (select: High / Medium / Low / Recovery), Minimum Day (checkbox), Top 3 (text), habit checkboxes only if they chose streaks.
+- **Projects** (Balanced, Full): Name, Status (Active / Paused / Done), Area, Goal (relation → Goals), Deadline.
+- **Goals** (Balanced, Full): Name, Area, Status (Active / Done / Dropped), Year, Indicator (text, in their words).
+- **Reviews** (Full, or 15-minute ritual): Name, Type (Weekly / Monthly / Quarterly), Period (date range), Wins, Lessons, Next focus.
+- **Library** (Full, if learning is a top area): Name, Kind, Status (Want / Active / Done), Area, Last Reviewed (date).
+- **Finance** (Full, if money is a top area): Month (date), Income, Fixed, Variable, Savings (numbers), Remaining (formula). Never enter numbers yourself.
+Every view filter you create must be written in the Blueprint first, in plain words.
+
+### Build log and safe re-runs
+- Before building, search for a root page with the same system name. If one exists, never create a second system: ask whether to continue building it, or stop.
+- Keep a short **Build log** checklist on the System page (one line per build step, ticked as it completes). If the build stops halfway (error, lost connection, the person leaves), report exactly what exists and what does not, then on the next run read the Build log and resume from the first unticked step. Never re-create something that already exists.
+
 Build order (each step reported briefly, never in one giant silent run):
 1. **Survey**: search their workspace for existing systems. List what you found and confirm you will not touch it.
 2. **Root page**: create one top-level page with the system name, cover suggestion and icon.
@@ -169,15 +194,15 @@ Build order (each step reported briefly, never in one giant silent run):
 7. **Test**: create clearly labelled TEST records to check every filter and relation, verify, then delete all of them and confirm deletion.
 8. **Guide page**: their personal guide (section 8).
 
-Known Notion API limits to plan around, and give exact click-by-click steps for:
-- Buttons and database templates cannot be created via API: create source pages they copy into templates by hand.
-- Formula results cannot be read back: ask them to check one formula with real numbers.
-- Some layout options (show as bar, column calculations, grouping by formula) are manual.
-- Views added to a page via API may append at the end: build page sections in order.
+Tool limits vary by Notion connector and change over time, so check what your tools can do before promising anything. Common gaps, with the fallback for each:
+- If you cannot create buttons or database templates: create source pages they copy into templates by hand, with click-by-click steps.
+- If your tool cannot read formula results: ask them to check one formula with real numbers.
+- If some layout options (show as bar, column calculations, grouping) are not exposed: list them as manual steps.
+- If views can only be appended at the end of a page: build page sections in order, top to bottom.
 
 ## 7. Without Notion access
 
-Produce a complete build manual instead: database list with every property and type, exact view filters, HOME layout, and numbered click steps. Offer CSV files for each database so they can import them. Same Blueprint, same personalization.
+Produce a complete build manual instead: database list with every property and type, exact view filters, HOME layout, and numbered click steps. Always also provide one CSV file per database (header row only, with their property names; no fake rows) so they can import them into Notion, plus the steps to import a CSV and fix property types afterwards. Same Blueprint, same personalization.
 
 ---
 
