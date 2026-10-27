@@ -42,7 +42,7 @@ Never sacrifice honesty for wow. Surprise comes from accuracy, never from flatte
 
 ### Quick path
 Quick = Round 1 (roles and season, no deep dives) + Round 3 (areas) + the **three core questions** + Round 6 (look and depth). Never skip the core questions: the Portrait, the Blueprint and the rituals depend on them.
-- Core 1 (rhythm, from Round 2): how their days differ: almost all the same / 2-3 kinds of days / every day is different. If they pick "2-3 kinds", ask them to name the kinds in one line. If they pick "every day is different", ask which kinds of day keep coming back (e.g. long shift, recovery, free day). Their named kinds become Day Types. If they cannot name any, use no Day Types: Days keeps only Capacity.
+- Core 1 (rhythm, from Round 2): how their days differ: almost all the same / 2-3 kinds of days / every day is different. If they pick "2-3 kinds", ask them to name the kinds in one line. If they pick "every day is different", ask which kinds of day keep coming back (e.g. long shift, recovery, free day). Their named kinds become Day Types. If they cannot name any, use no Day Types: Days is still created (at every depth) to log Capacity each day, which tells them when to open the Light tab.
 - Core 2 (time, from Round 5): daily maintenance time: 2 / 5 / 15 minutes.
 - Core 3 (past failures, from Round 4): why past systems failed (multi-select).
 
@@ -125,12 +125,12 @@ Each Day Type has a default capacity (High / Medium / Low / Recovery), written i
 For anyone with irregular energy or "felt guilty" in Core 3: one Minimum Day checkbox on Days. It means "today the bare minimum counts as a win". It never moves deadlines or goals. Explain this rule in the guide in one kind sentence.
 
 ### Season Mode
-If they mentioned exams, Ramadan, a newborn, a launch or a hard rotation: add a Season select on Days (Normal / their season names), and a "Season" tab on the Today block: Status is not Done AND Status is not Later AND (⭐ Must is checked OR Deadline is within the next 7 days).
+If they mentioned exams, Ramadan, a newborn, a launch or a hard rotation: add a Season select on Days (Normal / their season names), and a "Season" tab on the Today block: Status is not Done AND Status is not Later AND (⭐ Must is checked OR Deadline is on or before 7 days from today). This includes overdue deadlines, so nothing that has passed is hidden.
 
 ### Capacity-aware Today
 Notion filters cannot read "today's Day Type" from another database, so never promise an automatic switch. Build it this exact way:
 - The Today block on HOME is one linked Tasks view with these tabs, in this order:
-  - **Top 3**: 🎯 Top 3 is checked AND Status is not Done.
+  - **Top 3**: 🎯 Top 3 is checked AND Status is not Done AND Status is not Later.
   - **Normal day**: Status is not Done AND Status is not Later AND (Do Date is on or before today OR Deadline is on or before today).
   - **Light day**: the same filter AND ⭐ Must is checked.
 - If Days exists, right above it a Days view filtered "Date is today" shows Day Type and Capacity, with one line: "Low or Recovery today? Open the Light day tab."
@@ -141,7 +141,7 @@ Notion filters cannot read "today's Day Type" from another database, so never pr
 ### Areas
 Area is a select on Tasks (and on Projects and Goals when they exist), with their top areas as options in their words.
 - **Minimal and Balanced**: one "By area" tab on a Tasks view, grouped by Area. No area pages.
-- **Full**: one page per top area. Each shows only blocks whose databases exist: current goals, current projects, next tasks, plus one area-specific block from their deep dive (e.g. review queue for a doctor's medical topics, client list for a freelancer, cadence board for a creator) built only from databases in the Blueprint.
+- **Full**: one page per top area. Each shows only blocks whose databases exist: current goals, current projects, next tasks, plus one area-specific block from their deep dive (e.g. review queue for a doctor's medical topics, client list for a freelancer, cadence board for a creator) built only from databases in the Blueprint. Add that block only when you have a real deep-dive answer for that area. If they took the Quick path and chose Full, ask one short question per top area ("What do you most need to see on your <area> page?") with 3-4 options; if they skip it, leave the block out.
 
 ### Rituals
 Derived from maintenance time:
@@ -183,7 +183,7 @@ Check whether a Notion connector or tools are available. If not, go to section 7
 ### Depths
 | Depth | Always | Only if the answers justify it |
 |---|---|---|
-| Minimal | Tasks | Days (Day Types, Minimum Day, habits or Season) |
+| Minimal | Tasks | Days (when Core 1 is not "almost all the same", or for Minimum Day, habits or Season) |
 | Balanced | Tasks, Projects, Goals | Days |
 | Full | Tasks, Projects, Goals, Reviews, area pages | Days; Library (learning is a top area); Finance (money is a top area) |
 

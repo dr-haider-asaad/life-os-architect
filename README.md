@@ -101,6 +101,7 @@ Built by **Dr. Haider Asaad**, a physician and content creator, from the process
 
 ### Changelog
 
+- **v1.4**: Season tab includes overdue deadlines; Top 3 tab excludes Later; Days is created whenever days differ, even without named Day Types; Full after Quick asks one question per area before adding area-specific blocks.
 - **v1.3**: Season tab excludes Done and Later tasks; 🎯 Top 3 is its own Tasks checkbox (works without Days) and is never mixed with ⭐ Must; "every day is different" asks for recurring day kinds; Reviews is created only at Full, with a Guide checklist for 15-minute rituals at lower depths.
 - **v1.2**: Depths defined by what they include (no database is ever referenced at a depth that lacks it); Days gets a separate Name and Date; Quick path adds one rhythm question and never states guesses as facts; resume verifies real items and stores their IDs; manual guide is the primary no-Notion path, CSV optional; Areas, Inbox, This Week, Overdue, habits, Season and weekly review without Reviews are now defined.
 - **v1.1**: Quick interview now always asks about daily time and past failures; exact build recipe for the Light/Normal *Today* view; base schema; build log for safe re-runs; CSV files always provided without Notion; tool limits stated per connector; shorter description; updated install path.
