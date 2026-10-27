@@ -23,12 +23,12 @@ Not a template. A short, adaptive interview, a portrait of how your life actuall
 - **Day Types** for irregular lives (On-Call, Post-Call, Exam Day, Client Day…) with a capacity-aware *Today* view.
 - **Minimum Day**: on hard days the bare minimum counts as a win. Deadlines never move on their own.
 - **Season Mode** for exams, Ramadan, a newborn, a launch.
-- **Three depths**: Minimal, Balanced, Full. It recommends the one that matches the time you will honestly give.
+- **Three depths**: Minimal (just Tasks, plus Days if your days differ), Balanced (adds Projects and Goals), Full (adds Reviews, area pages, and Library or Finance only if those areas matter to you). It recommends the one that matches the time you will honestly give.
 - **Your language and dialect**, including Arabic dialects, English, and more.
 - **No invented data.** It never fills your system with fake goals, tasks or numbers.
 - **Checkup mode**: come back after a month and it proposes cuts before additions.
-- **No Notion connected?** You get an exact manual build guide plus empty CSV files (headers only) to import.
-- **Safe to re-run**: a build log lets it resume after an interruption without creating duplicates.
+- **No Notion connected?** You get an exact manual build guide. Optional CSV files give you the basic columns; relations, formulas and views are set by hand following the guide.
+- **Built to resume**: a build log with the ID of everything it creates. After an interruption it checks what really exists, completes what is partial, and never creates duplicates.
 
 ### Install
 
@@ -53,7 +53,7 @@ or in Arabic:
 
 > ابنيلي Life OS يناسب حياتي.
 
-The deep interview takes about 10 minutes. A quick version (about 4 minutes) is offered at the start; it still asks the two questions that matter most: how much time you can give daily, and why past systems failed you.
+The deep interview takes about 10 minutes. A quick version (about 4 minutes) is offered at the start; it still asks the three questions that matter most: how your days differ, how much time you can give daily, and why past systems failed you. Anything it did not ask is shown to you as an assumption, never as a fact about you.
 
 ### Origin
 
@@ -78,12 +78,12 @@ Built by **Dr. Haider Asaad**, a physician and content creator, from the process
 - **أنواع أيام** للحياة غير المنتظمة: خفارة، بعد الخفارة، يوم امتحان، يوم عملاء…
 - **Minimum Day**: بالأيام الصعبة، أقل شي يُحسب إنجاز، والمواعيد ما تتحرك لوحدها.
 - **Season Mode** لرمضان والامتحانات والمولود الجديد.
-- **ثلاث مستويات**: بسيط، متوازن، كامل.
+- **ثلاث مستويات**: بسيط (المهام، والأيام إذا أيامك مختلفة)، متوازن (يضيف المشاريع والأهداف)، كامل (يضيف المراجعات وصفحات المجالات، والمكتبة أو المالية بس إذا تهمك).
 - **تحجي بلغتك ولهجتك.**
 - **ما تخترع بيانات** أبداً.
 - **وضع المراجعة**: ترجعلها بعد شهر وتخفف النظام قبل ما تضيف.
-- **ما عندك Notion متصل؟** تطلعلك دليل بناء يدوي دقيق مع ملفات CSV فارغة (بس العناوين) تستوردها.
-- **آمنة إذا انعادت**: تكمل من وين وقفت بدون ما تكرر شي.
+- **ما عندك Notion متصل؟** تطلعلك دليل بناء يدوي دقيق. وملفات CSV اختيارية تعطيك الأعمدة الأساسية، والعلاقات والمعادلات والعروض تسويها يدوياً حسب الدليل.
+- **تكمل إذا انقطعت**: تحفظ معرّف كل شي تبنيه، وتتأكد من الموجود فعلاً، وتكمّل الناقص بدون ما تكرر شي.
 
 ### التنصيب
 
@@ -101,6 +101,7 @@ Built by **Dr. Haider Asaad**, a physician and content creator, from the process
 
 ### Changelog
 
+- **v1.2**: Depths defined by what they include (no database is ever referenced at a depth that lacks it); Days gets a separate Name and Date; Quick path adds one rhythm question and never states guesses as facts; resume verifies real items and stores their IDs; manual guide is the primary no-Notion path, CSV optional; Areas, Inbox, This Week, Overdue, habits, Season and weekly review without Reviews are now defined.
 - **v1.1**: Quick interview now always asks about daily time and past failures; exact build recipe for the Light/Normal *Today* view; base schema; build log for safe re-runs; CSV files always provided without Notion; tool limits stated per connector; shorter description; updated install path.
 - **v1.0**: First release.
 
